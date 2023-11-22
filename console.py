@@ -129,7 +129,7 @@ class HBNBCommand(cmd.Cmd):
 
         new_instance = eval(class_name)()
         for i in range(1, len(rem_list)):
-            key, value = tuple(rem_list[i].splt("="))
+            key, value = tuple(rem_list[i].split("="))
             if value.startswith('"'):
                 value = value.strip('"').replace("_", " ")
             else:
