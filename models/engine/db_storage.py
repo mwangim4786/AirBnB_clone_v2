@@ -19,8 +19,8 @@ class DBStorage:
     """Represents a database storage engine.
 
     Attributes:
-        __engine (sqlalchemy.Engine)
-        __session (sqlalchemy.Session)
+        __engine (sqlalchemy.Engine): The working SQLAlchemy engine.
+        __session (sqlalchemy.Session): The working SQLAlchemy session.
     """
 
     __engine = None
@@ -37,7 +37,6 @@ class DBStorage:
         if getenv("HBNB_ENV") == "test":
             Base.metadata.drop_all(self.__engine)
 
-        
     def all(self, cls=None):
         """Query on the curret database session all objects of the given class.
 
