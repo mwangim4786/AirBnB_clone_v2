@@ -7,7 +7,7 @@ Base = declarative_base()
 
 class BaseModel:
 
-    id = Column(String(60), Primary_key=True, NotNull)
+    id = Column(String(60), Primary_key=True, nullable=False)
     created_at = Column(Datetime, nullable=False, default=datetime.utcnow)
     updated_at = Column(Datetime, nullable=False, default=datetime.utcnow)
 
