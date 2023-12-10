@@ -70,11 +70,11 @@ web_static_{}/web_static'
         # create new symbolic link
         run('sudo ln -s /data/web_static/releases/\
 web_static_{}/ /data/web_static/current'.format(timestamp))
-        except:
-            return False
+    except:
+        return False
 
-        # True on success
-        return True
+    # True on success
+    return True
 
 
 
