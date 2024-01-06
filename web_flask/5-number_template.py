@@ -2,7 +2,7 @@
 """Script that starts a Flask web application
 """
 
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
@@ -36,6 +36,13 @@ def number(n=None):
     """display n is a number only if n is an integer
     """
     return str(n) + ' is a number'
+
+@app.route('/number_template/<int:n>')
+def number_template(n):
+    """Retrieve template for request
+    """
+    path = '5-number.html'
+    return render_template(path, n=n)
 
 if __name__ == '__main__':
     app.url_map.strict_slashes = False
